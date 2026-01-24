@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: ProductService # 与Nacos一致、与网关路由配置一致，暂保留该名称
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848 # Nacos地址（本地）
+        username: nacos # Nacos默认用户名
+        password: nacos # Nacos默认密码
+        ip: 127.0.0.1 # 核心：强制注册为本地回环IP，解决内网IP网关访问不到的问题
+        port: 8081 # 显式指定服务端口，确保Nacos注册端口正确
